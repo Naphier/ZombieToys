@@ -74,14 +74,14 @@ Material:
           m_Offset: {x: 0, y: 0}
       data:
         first:
-          name: _MetallicGlossMap
+          name: _SpecGlossMap
         second:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
         first:
-          name: _SpecGlossMap
+          name: _MetallicGlossMap
         second:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
@@ -110,7 +110,7 @@ Material:
       data:
         first:
           name: _Glossiness
-        second: 0.5
+        second: 0.73
       data:
         first:
           name: _BumpScale
@@ -143,7 +143,7 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: 0.4573962, g: 0.56541884, b: 0.6911764, a: 0.21176471}
+        second: {r: 0.68512106, g: 0.81702673, b: 0.9705882, a: 0.403}
       data:
         first:
           name: _SpecColor

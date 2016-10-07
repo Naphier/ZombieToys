@@ -122,7 +122,7 @@ Material:
       data:
         first:
           name: _BumpScale
-        second: 3.41
+        second: 4
       data:
         first:
           name: _OcclusionStrength
@@ -159,7 +159,7 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: 1, g: 1, b: 1, a: 1}
+        second: {r: 0.5588235, g: 0.39378357, b: 0.18490486, a: 1}
       data:
         first:
           name: _SpecColor

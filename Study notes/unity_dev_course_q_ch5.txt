@@ -1,0 +1,34 @@
+Ch 5
+This was most difficult so far.
+
+This material property causes polygons to appear and light as if they had more surface detail:
+- Emission
+- Metallic
+√ Normal
+- Smoothness
+
+This material rendering mode uses black in an alpha channel to define where a material is exactly NOT appearing:
+- Transparency
+- Fade
+- Opaque
+√ Cutout 
+
+The albedo of a material is defined as:
+- The diffuse color of the material in general light
+- The blocking of bounced light by adjacent surfaces
+- A raw diffuse color before any weathering is applied
+√ The color of the material without any lighting data
+
+This material property controls spreading of light on microsurface detail:
+- Metallic
+- Normal
+- Ambient Occlusion
+√ Smoothness
+
+The specular property of a material:
+√ Controls the color and strength of reflection
+- Controls the spreading of light on microsurface detail
+- Defines where surfaces will receive high or low amounts of indirect light
+- Modifies the surface to show more detail than the polygons actually have
+
+https://docs.unity3d.com/Manual/StandardShaderMaterialParameters.html
