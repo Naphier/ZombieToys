@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 419902}
   - 198: {fileID: 19875520}
   - 199: {fileID: 19974362}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: HitParticles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,7 +27,7 @@ GameObject:
   - 4: {fileID: 422886}
   - 108: {fileID: 10847630}
   - 119: {fileID: 11939144}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Spotlight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49,7 +49,7 @@ GameObject:
   - 114: {fileID: 11426926}
   - 114: {fileID: 11428252}
   - 114: {fileID: 11495776}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Hellephant
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -65,7 +65,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 495064}
   - 137: {fileID: 13747170}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Hellephant
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -211,7 +211,7 @@ MonoBehaviour:
   deathClip: {fileID: 0}
   hurtClip: {fileID: 0}
   enemyAttack: {fileID: 11426926}
-  enemyMovement: {fileID: 0}
+  enemyMovement: {fileID: 11495776}
   animator: {fileID: 9595584}
   audioSource: {fileID: 0}
   capsuleCollider: {fileID: 13614924}
