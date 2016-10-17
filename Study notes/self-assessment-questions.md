@@ -141,13 +141,13 @@ The albedo of a material is defined as:
 - A raw diffuse color before any weathering is applied
 - √ The color of the material without any lighting data
 
-	This material property controls spreading of light on microsurface detail:
+This material property controls spreading of light on microsurface detail:
 - Metallic
 - Normal
 - Ambient Occlusion
 - √ Smoothness
 
-	The specular property of a material:
+The specular property of a material:
 - √ Controls the color and strength of reflection
 - Controls the spreading of light on microsurface detail
 - Defines where surfaces will receive high or low amounts of indirect light
