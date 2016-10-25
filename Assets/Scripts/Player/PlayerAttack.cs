@@ -1,4 +1,4 @@
-﻿//This script handles the player's ability to attack. The biggest responcibility of this script is to maintain the timing of attack cooldowns
+//This script handles the player's ability to attack. The biggest responcibility of this script is to maintain the timing of attack cooldowns
 //so that the player cannot attack too fast. Mostly, this is a "pass through" or "bridge" script, which means that it receives input from
 //the PlayerInput scripts and then passes the input along to the appropriate attack. Very little attack logic (apart from timing) exists in this 
 //script. 
@@ -20,7 +20,9 @@ public class PlayerAttack : MonoBehaviour
 	int attackIndex = 0;								//The idnex of the attack the player is currently using
 	float attackCooldown = 0f;							//How long the player must wait before attacking again
 	float timeOfLastAttack = 0f;						//The time when the player last attacked
-	bool canAttack = true;								//Whether or not the player can attack
+	bool canAttack = true;                              //Whether or not the player can attack
+
+	bool lightningAttackSelectEnabled = false;
 
 	//This method switches the active attack on the player
 	public void SwitchAttack()
@@ -43,8 +45,18 @@ public class PlayerAttack : MonoBehaviour
 			//If the value of attackIndex is 0...
 			case 0:
 				//...and if lightningAttack exists, enable it
-				if(lightningAttack != null)
+				if (lightningAttack != null)
+				{
+					if (!lightningAttackSelectEnabled)
+					{
+						lightningAttackSelectEnabled = true;
+						AudioSource source = lightningAttack.GetComponent<AudioSource>();
+						source.playOnAwake = true;
+					}
+
+
 					lightningAttack.gameObject.SetActive(true);
+				}
 				break;
 			//If the value of attackIndex is 1...
 			case 1:

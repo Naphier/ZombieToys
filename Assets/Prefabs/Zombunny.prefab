@@ -15,6 +15,7 @@ GameObject:
   - 114: {fileID: 11435848}
   - 114: {fileID: 11403802}
   - 114: {fileID: 11400076}
+  - 82: {fileID: 8289000}
   m_Layer: 9
   m_Name: Zombunny
   m_TagString: Untagged
@@ -96,6 +97,81 @@ Transform:
   - {fileID: 439994}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!82 &8289000
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 167196}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 24357522, guid: 5fdb08ae778b73e40af75e92f28743c5,
+    type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!95 &9580624
 Animator:
   serializedVersion: 3
@@ -129,12 +205,12 @@ MonoBehaviour:
   scoreValue: 10
   sinkSpeed: 2.5
   deathEffectTime: 2
-  deathClip: {fileID: 0}
-  hurtClip: {fileID: 0}
+  deathClip: {fileID: 8300000, guid: 1d3bfb9269f136947bf8ac164cace1ff, type: 3}
+  hurtClip: {fileID: 8300000, guid: 02e6208ec76314158a9f548f51fe9f11, type: 3}
   enemyAttack: {fileID: 11403802}
   enemyMovement: {fileID: 11435848}
   animator: {fileID: 9580624}
-  audioSource: {fileID: 0}
+  audioSource: {fileID: 8289000}
   capsuleCollider: {fileID: 13671052}
   hitParticles: {fileID: 19813460}
   isInvulnerable: 0

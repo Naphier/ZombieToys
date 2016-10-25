@@ -1,4 +1,4 @@
-﻿//This script handles pausing the game as well as controlling some game options such as audio and quitting
+//This script handles pausing the game as well as controlling some game options such as audio and quitting
 
 using UnityEngine;
 using UnityEngine.UI;
@@ -16,7 +16,9 @@ public class PauseMenu : MonoBehaviour
 	[Header ("UI")]
 	[SerializeField] GameObject pausePanel;							//A reference to the UI panel with all the controls on it
 	[SerializeField] Slider effectsSlider = null;					//A slider for sound effects volume
-	[SerializeField] Slider musicSlider = null;						//A slider for music volume
+	[SerializeField] Slider musicSlider = null;                     //A slider for music volume
+	[SerializeField]
+	Button hudPause = null;
 
 	[Header ("Audio")]
 	[SerializeField] AudioMixer masterMixer = null;					//Reference to the main audio mixer
@@ -61,6 +63,7 @@ public class PauseMenu : MonoBehaviour
 			originalTimeScale = Time.timeScale;
 			//...and set the timescale to 0 (which freezes time)
 			Time.timeScale = 0f;
+			hudPause.gameObject.SetActive(false);
 		}
 		//Otherwise...
 		else
@@ -69,6 +72,7 @@ public class PauseMenu : MonoBehaviour
 			pausePanel.SetActive(false);
 			//...and set the timescale back to its original value
 			Time.timeScale = originalTimeScale;
+			hudPause.gameObject.SetActive(true);
 		}
 	}
 

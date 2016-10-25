@@ -490,3 +490,100 @@ Which Emit From option allows particles to originate from anywhere withing the e
 - Base shell
 - √ Volume
 
+
+=========================================================================================================================
+Ch 16 - Audio
+
+To make a sound play over and over, which of the following needs to be checked?
+- Continuous
+- Replay
+- √ Looping
+- Repeating
+
+To simulate the echoing and distortion of a type of sound environment such as cave, arena, or forest, which of the following audio components would be the best option to use?
+- Audio Listeners
+- Soundscapes
+- √ Reverb Zones
+- Flange Filters
+
+Which option begins playing the sound as soon as the GameObject loads?
+- Begin on Start
+- Wake on Opening
+- Sound.PlayOnEnter
+- √ Play on Awake
+
+To modify the volume of an audio clip, the clip must be applied to: 
+- The amplitude of an audio mixer
+- An audio clip modifier
+- A sound propertis component
+- √ An audio source component
+
+
+=========================================================================================================================
+Ch 17 - Character Selection
+
+A _______ executes a set of instructions and can either return a value or not return a value.
+- Pragma
+- √ Method
+- Variable
+- Subroutine
+
+This Transition Parameter type is reset by the controller when consumed by a transition:
+- Float
+- Integer
+- √ Trigger
+- Bool
+
+Which method gets a reference to a component on a GameObject?
+- GameObject.Find
+- FindComponent
+- √ GetComponent
+- Component.Reference
+
+In this line of code, which of these does not set the playerPosition to 0,0,0?
+Vector3 playerPosition = ______;
+- Vector3.zero
+- √ Vector3(0)
+- √ new Vector3.default
+- new Vector3 (0,0,0)
+
+To create this placeholder for animation in the Animation indow, you would first right-click in anu open area. Your next action would then be to choose:
+- Create > State
+- √ Create > Empty
+- New from Blend Tree
+- Make > New
+
+
+=========================================================================================================================
+Ch 18 - UI
+
+What method is called when this button is clicked (image showing On Click with Player (Audio Source) AudioSource.Play)?
+- Runtime Only
+- Player.OnClick
+- Button.Play
+- √ AudioSource.Play
+
+In the image shown, what has caused the change in property names of the Rect Transform (image showing middle-center vs. custom-custom anchors - anchor values in second image are changed)
+- Choosing screen space
+- √ Splitting the anchor
+- Moving the pivot
+- Adding a slider
+
+Some of the available options for the Transition property of a button are:
+- √ Sprite Swap and Color Tint
+- Animator and Animation
+- Color Over Life and None
+- Sprite Tinit and Animator
+
+In which UI component would you use a Sprite?
+- Texture
+- Button
+- Raw Image
+- √ Image
+
+Which component allows the canvas to resize with a display?
+- Canvas transform
+- Rect transform
+- √ Canvas Scaler
+- Event System
+
