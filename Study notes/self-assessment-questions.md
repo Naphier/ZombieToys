@@ -587,3 +587,36 @@ Which component allows the canvas to resize with a display?
 - √ Canvas Scaler
 - Event System
 
+
+=========================================================================================================================
+Ch 19 - Building
+
+Android, web, and iOS are some of the supported platforms for:
+- √ Unity Cloud Build
+- Performance monitoring
+- Unit Ads
+- Rapid Sync
+
+Which identifier is used to link a project data feed to Unity Analytics?
+- Project Name
+- Scene Name
+- √ Project ID
+- ID Certificate
+
+In order to utilize Unity Cloud Build, your project must be synced to:
+- Unity Asset Server
+- Network Attached Storage
+- √ A source control repository
+- An external hard drive
+
+An image for an image component must be imported as this type:
+- √ Sprite
+- PNG
+- Alpha
+- Texture
+
+Differentiate between Rewarded and Simple Ads:
+- √ Rewarded Ads cannot be skipped by default
+- Simple Ads are static images
+- Simple Ads are unlimited
+- Rewarded Ads provide more money per click

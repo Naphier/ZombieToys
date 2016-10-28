@@ -19,6 +19,8 @@ public class PauseMenu : MonoBehaviour
 	[SerializeField] Slider musicSlider = null;                     //A slider for music volume
 	[SerializeField]
 	Button hudPause = null;
+	[SerializeField]
+	Animator animator;
 
 	[Header ("Audio")]
 	[SerializeField] AudioMixer masterMixer = null;					//Reference to the main audio mixer
@@ -62,19 +64,23 @@ public class PauseMenu : MonoBehaviour
 			//...record the current timescale
 			originalTimeScale = Time.timeScale;
 			//...and set the timescale to 0 (which freezes time)
-			Time.timeScale = 0f;
+			//Time.timeScale = 0f;
 			hudPause.gameObject.SetActive(false);
+			animator.SetTrigger("open");
 		}
 		//Otherwise...
 		else
 		{
 			//...hide the UI panel...
-			pausePanel.SetActive(false);
+			//pausePanel.SetActive(false);
 			//...and set the timescale back to its original value
 			Time.timeScale = originalTimeScale;
 			hudPause.gameObject.SetActive(true);
+			animator.SetTrigger("close");
 		}
 	}
+
+
 
 	//Called by the UI quit button
 	public void Quit ()

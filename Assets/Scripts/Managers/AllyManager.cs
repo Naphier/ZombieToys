@@ -1,4 +1,4 @@
-﻿//This script controls the ally spawning functionality. It keeps track of the number of spendable "points" the player has as well as
+//This script controls the ally spawning functionality. It keeps track of the number of spendable "points" the player has as well as
 //the current state of a spawned ally. Note that points for allies in this script are different from the points stored in the Game 
 //Manager. Finally, this script is responsible for know if an ally can be spawned and showing the appropriate UI image
 
@@ -10,7 +10,7 @@ public class AllyManager : MonoBehaviour
 	[SerializeField] int allyCost;				//The amount of points an ally costs to summon
 	[SerializeField] GameObject allyPrefab;		//The prefab of the ally to be summoned
 	[SerializeField] Transform allySpawnPoint;	//Where the ally should be summoned
-	[SerializeField] Image allyImage;			//A reference to the UI image that lets the player know an ally is available
+	[SerializeField] GameObject allyImage;			//A reference to the UI image that lets the player know an ally is available
 
 	Ally ally;									//A reference to any currently spawned ally
 	int allyPoints;								//How many points the player currently has to spend on allies
@@ -27,7 +27,7 @@ public class AllyManager : MonoBehaviour
 		obj.SetActive(false);
 		//If the allyImage exists, disable it
 		if(allyImage != null)
-			allyImage.enabled = false;
+			allyImage.SetActive( false);
 	}
 
 	//Called from the GameManager script to give the AllyManager some points to
@@ -39,7 +39,7 @@ public class AllyManager : MonoBehaviour
 
 		//If there is an allyImage and the player can summon an ally, show the image
 		if (allyImage != null && CanSummonAlly())
-			allyImage.enabled = true;
+			allyImage.SetActive( true);
 	}
 		
 	public bool CanSummonAlly()
@@ -67,7 +67,7 @@ public class AllyManager : MonoBehaviour
 
 		//If there is an allyImage, turn it off
 		if(allyImage != null)
-			allyImage.enabled = false;
+			allyImage.SetActive(false);
 		//Return a reference to the ally back to the caller
 		return ally;
 	}

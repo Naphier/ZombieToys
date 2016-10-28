@@ -1,4 +1,4 @@
-﻿//This script handles the game management. Game managers are often completely different and generally provide whatever
+//This script handles the game management. Game managers are often completely different and generally provide whatever
 //specific and varied services an individual game may need. In this project, in an effort to make the code simple to understand
 //and modular, the game manager is tied into several core functions of the player, enemies, and allies. Namely, this manager
 //keeps track of the player and the players state, handles all scoring, interfaces with the UI, summons the allies, and 
@@ -25,14 +25,17 @@ public class GameManager : MonoBehaviour
 	[SerializeField] Text gameoverText;				//Text UI element informing the player that they have lost
 
 	[Header("Player Selection Properties")]
-	[SerializeField] GameObject enemySpawners;		//The game object parent of all of the enemy spawners
+	[SerializeField] GameObject enemySpawnersParent;		//The game object parent of all of the enemy spawners
 	[SerializeField] Animator cameraAnimator;		//A reference to the animator on the camera (to transition it when the player is chosen)
 
 	[Header("Ally Properties")]
-	[SerializeField] AllyManager allyManager;		//A reference to the attached ally manager script
+	AllyManager allyManager;       //A reference to the attached ally manager script
+	[SerializeField]
+	AllyManager[] allyManagers;
 
-	int score = 0;									//The player's current score
-
+	EnemySpawner[] enemySpawners;
+	int score = 0;                                  //The player's current score
+	int allyManagerIndex = 0;
 	void Awake()
 	{
 		//This is a common approach to handling a class with a reference to itself.
@@ -43,6 +46,8 @@ public class GameManager : MonoBehaviour
 		//This is useful so that we cannot have more than one GameManager object in a scene at a time.
 		else if (Instance != this)
 			Destroy(this);
+
+		allyManager = allyManagers[0];
 	}
 
 	//Called by the PlayerSelect script when a player has been selected at the beginning of the game
@@ -58,8 +63,10 @@ public class GameManager : MonoBehaviour
 			infoText.text = "Score: 0";
 
 		//If the enemy spawners game object exists, enable it
-		if(enemySpawners != null)
-			enemySpawners.SetActive (true);
+		if(enemySpawnersParent != null)
+			enemySpawnersParent.SetActive (true);
+
+		enemySpawners = FindObjectsOfType<EnemySpawner>();
 
 		//If the reference to the camera's animator exists, trigger the Start parameter
 		if(cameraAnimator != null)
@@ -84,6 +91,7 @@ public class GameManager : MonoBehaviour
 		Invoke("ReloadScene", delayOnPlayerDeath);
 	}
 
+	int scoreCount = 0;
 	//Called from the EnemyHealth script when an enemy is defeated
 	public void AddScore(int points)
 	{
@@ -95,6 +103,22 @@ public class GameManager : MonoBehaviour
 		//If the ally manager exists, give it some points for the player to spend on an ally
 		if (allyManager != null)
 			allyManager.AddPoints(points);
+
+		scoreCount++;
+		if (scoreCount % 20 == 0)
+		{
+			IncreaseDifficulty();
+		}
+	}
+
+	private void IncreaseDifficulty()
+	{
+		//Debug.Log("Increasing difficulty");
+		foreach (var item in enemySpawners)
+		{
+			item.spawnRate -= 0.5f;
+			item.maxEnemies += 1;
+		}
 	}
 
 	//Called from the PlayerInput scripts and / or the Ally button OnClick() event
@@ -113,6 +137,7 @@ public class GameManager : MonoBehaviour
 			//...and call UnsummonAlly() after a set delay
 			Invoke("UnSummonAlly", ally.Duration);
 		}
+		
 	}
 
 	//This method removes the ally from the scene
@@ -122,6 +147,11 @@ public class GameManager : MonoBehaviour
 		EnemyTarget = Player.transform;
 		//Tell the ally manager to remove the ally
 		allyManager.UnSummonAlly();
+
+		allyManagerIndex++;
+		if (allyManagerIndex == allyManagers.Length)
+			allyManagerIndex = 0;
+		allyManager = allyManagers[allyManagerIndex];
 	}
 
 	//This method reloads the scene after the player has been defeated
