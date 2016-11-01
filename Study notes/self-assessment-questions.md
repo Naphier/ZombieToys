@@ -1,16 +1,3 @@
-Complaints
-- Ch 2 assesment wouldn't allow click on any element in the image.
-- Repeating Ch2 assesment says I only got 50% right, which is completely incorrect
-- Can't full screen videos
-- Inconsistent video volume
-- Sign in with Unity ID credentials doesn't work
-- Login flow is terrible (need to go to Unity3d.com, login, then click the link provided in email)
-- Next video button or autoplay next video feature is missing
-- Does not save my place, seems to have stopped doing this at chapter 7. 
-- Shows that I've completed the course, but I haven't.
-
-
-
 =========================================================================================================================
 Ch 1 - Game Dev Intro
 
