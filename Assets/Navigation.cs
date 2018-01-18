@@ -4,13 +4,13 @@ using System.Collections;
 public class Navigation : MonoBehaviour
 {
 	[SerializeField] Transform target;
-	[SerializeField] NavMeshAgent agent;
+	[SerializeField] UnityEngine.AI.NavMeshAgent agent;
 	[SerializeField] float updateDelay;
 
 	void Reset()
 	{
 		if (!agent)
-			agent = GetComponent<NavMeshAgent>();
+			agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
 	}
 
 	void Start()

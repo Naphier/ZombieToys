@@ -6,12 +6,12 @@ public class Ally : MonoBehaviour
 {
 	public float Duration;							//How long the ally stays spawned
 
-	[SerializeField] NavMeshAgent navMeshAgent;		//A reference to the ally's navmesh agent
+	[SerializeField] UnityEngine.AI.NavMeshAgent navMeshAgent;		//A reference to the ally's navmesh agent
 
 	void Reset()
 	{
 		//Get a reference to the navmesh agent
-		navMeshAgent = GetComponent<NavMeshAgent>();
+		navMeshAgent = GetComponent<UnityEngine.AI.NavMeshAgent>();
 	}
 
 	public void Move(Vector3 point)
